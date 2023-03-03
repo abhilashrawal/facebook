@@ -1,11 +1,13 @@
 const express = require('express')
 const app= express()
 
-const port = 3000
+const router = require('./routes/index')
 
-app.get('/',  (req , res)=>{
-    res.send('helo world')
-})
+const port = 300
+
+const view = ("views" , './views')
+app.use('/', router)
+
 
 app.listen(port,()=> {
     console.log(`facebook port ${port}`)
